@@ -1,0 +1,8 @@
+streamlit
+transformers
+sentence-transformers
+spacy
+PyPDF2
+python-docx
+torch
+numpy

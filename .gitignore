@@ -1,0 +1,59 @@
+# PyCharm IDE files
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Virtual environment folder
+venv/
+env/
+ENV/
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sclib/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Logs
+*.log
+logs/
+
+# Data files (unless they are essential for the project)
+*.pdf
+*.docx
+*.txt
+data/
+*.pkl
+*.pickle
+
+# Environment variables file (never share this!)
+.env
+.secrets
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
