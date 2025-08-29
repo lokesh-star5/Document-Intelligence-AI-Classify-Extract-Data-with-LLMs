@@ -2,7 +2,7 @@
 from transformers import pipeline
 from utils import extract_entities, extract_whitepaper_sections
 
-# --------- Improved classification with more document types ----------
+# Improved classification with more document types
 classifier = pipeline("zero-shot-classification", model="facebook/bart-large-mnli")
 candidate_labels = [
     "research paper", "whitepaper", "technical report",
@@ -30,7 +30,7 @@ def classify_document(text):
     return {"label": top_labels[0][0], "confidence": top_labels[0][1], "all_predictions": top_labels}
 
 
-# --------- Enhanced Structured Output ----------
+# Enhanced Structured Output
 def structured_output(text, doc_type):
     entities = extract_entities(text, doc_type)
 
@@ -98,6 +98,7 @@ def structured_output(text, doc_type):
         }
 
     return output
+
 
 
 
