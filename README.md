@@ -16,65 +16,6 @@ A powerful Streamlit web application that leverages Large Language Models (LLMs)
 - **Core Language & ML:** Python
 - **Language Models & NLP:** Hugging Face Transformers, spaCy, Sentence-Transformers
 - **File Processing:** PyPDF2, python-docx
-- **Version Control:** Git & GitHub
-
-## Getting Started
-
-### Prerequisites
-
-Before you begin, ensure you have met the following requirements:
-- You have installed **Python 3.8** or higher.
-- You have installed **Git**.
-
-### Installation & Setup
-
-Follow these steps to get a local copy up and running:
-
-1.  **Clone the repository**
-    ```bash
-    git clone https://github.com/your-username/document-ai-classifier.git
-    cd document-ai-classifier
-    ```
-
-2.  **Create and activate a virtual environment** (Recommended)
-    ```bash
-    # On Windows
-    python -m venv venv
-    .\venv\Scripts\activate
-
-    # On macOS/Linux
-    python3 -m venv venv
-    source venv/bin/activate
-    ```
-
-3.  **Install the required dependencies**
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-4.  **Download the spaCy language model**
-    ```bash
-    python -m spacy download en_core_web_sm
-    ```
-
-### How to Run the Application
-
-1.  **Ensure your virtual environment is activated** (you should see `(venv)` in your terminal prompt).
-2.  **Launch the Streamlit app:**
-    ```bash
-    streamlit run app.py
-    ```
-3.  **Your browser will automatically open** to `http://localhost:8501`.
-4.  **Upload a document** (PDF, DOCX, or TXT) and watch the AI process it!
-
-## How to Use
-
-1.  **Upload:** Drag and drop a file into the uploader box.
-2.  **Automatic Processing:** The app will automatically:
-    - **Classify** the document (e.g., "This is a Whitepaper").
-    - Show a **confidence score**.
-    - Display the **structured data** extracted in a JSON format.
-3.  **Ask Questions:** Use the text input at the bottom to ask any question about the document's content (e.g., "What is the main topic?", "List the key technologies mentioned.").
 
 ## Project Structure
 document-ai-classifier/
@@ -91,25 +32,69 @@ document-ai-classifier/
 
 ├── LICENSE # The MIT License
 
-└── README.md # This file
+## Getting Started
 
-## Future Improvements
+### Prerequisites
 
-- Fine-tune a custom model for higher classification accuracy.
-- Add support for images of documents using OCR.
-- Implement a database to store processed documents.
-- Deploy the application as a public web service.
+- Python 3.8 or higher
+- pip (Python package installer)
 
-## How to Contribute
+### Installation
 
-Contributions are welcome! If you have ideas for improvements, please feel free to fork this repository and submit a Pull Request.
+1. **Download the project files**
+   - Click the green "Code" button on this GitHub page
+   - Select "Download ZIP"
+   - Extract the ZIP file to a folder on your computer
 
-## License
+2. **Open a terminal/command prompt** and navigate to the project folder:
+   ```bash
+   cd path/to/document-ai-classifier
+3. Install the required dependencies:
+   ```bash
+    pip install -r requirements.txt
+4.  Download the spaCy language model:
+    ```bash
+    python -m spacy download en_core_web_sm
+   
+### Usage
+1.Run the application:
+  streamlit run app.py
+    
+2.Open your browser to http://localhost:8501
 
-Distributed under the MIT License. See `LICENSE` file for more information.
+3.Upload a document (PDF, DOCX, or TXT) and view the:
 
-## Acknowledgments
+  - **Automatic classification results**
 
-- Hugging Face for providing pre-trained models.
-- The Streamlit team for making it easy to build data apps.
+  - **Extracted structured data in JSON format**
+
+  - **Ask questions about the document content**
+
+### How It Works
+-**Document Processing:** The app reads uploaded files using specialized libraries (PyPDF2 for PDFs, python-docx for Word files).
+
+-**Classification:** A zero-shot learning model analyzes the text to determine the document type.
+
+-**Information Extraction:** NLP techniques identify and extract key entities like names, dates, and contact information.
+
+-**Question Answering:** A RAG (Retrieval Augmented Generation) system finds relevant context in the document to answer user questions.
+
+### File Descriptions
+-**app.py:** Main application file containing the Streamlit web interface
+
+-**main.py:** Handles document classification and structured output generation
+
+-**utils.py:** Contains helper functions for file reading, entity extraction, and Q&A
+
+-**requirements.txt:** Lists all Python packages needed to run the project
+
+### License
+Distributed under the MIT License. See LICENSE file for details.
+
+### Acknowledgments
+-**Hugging Face for providing pre-trained models**
+
+-**The Streamlit team for making web app development accessible**
+
+-**spaCy for robust natural language processing capabilities**
 
