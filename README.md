@@ -18,6 +18,7 @@ A powerful Streamlit web application that leverages Large Language Models (LLMs)
 - **File Processing:** PyPDF2, python-docx
 
 ## Project Structure
+
 document-ai-classifier/
 
 │
@@ -32,6 +33,8 @@ document-ai-classifier/
 
 ├── LICENSE # The MIT License
 
+└── README.md # This file
+
 ## Getting Started
 
 ### Prerequisites
@@ -41,20 +44,24 @@ document-ai-classifier/
 
 ### Installation
 
-1. **Download the project files**
-   - Click the green "Code" button on this GitHub page
-   - Select "Download ZIP"
-   - Extract the ZIP file to a folder on your computer
+1. **Navigate to the project repository**: 
+   [https://github.com/lokesh-star5/Document-Intelligence-AI-Classify-Extract-Data-with-LLMs](https://github.com/lokesh-star5/Document-Intelligence-AI-Classify-Extract-Data-with-LLMs)
 
-2. **Open a terminal/command prompt** and navigate to the project folder:
+2. **Download all required files**:
+   - Click on each of these 6 files in the repository:
+     - `app.py`
+     - `main.py` 
+     - `utils.py`
+     - `requirements.txt`
+     - `LICENSE`
+     - `README.md`
+   - For each file, click the "Raw" button and save the file to a folder on your computer
+
+3. **Create a project folder** and place all 6 downloaded files in it
+
+4. **Open a terminal/command prompt** and navigate to the project folder:
    ```bash
-   cd path/to/document-ai-classifier
-3. Install the required dependencies:
-   ```bash
-    pip install -r requirements.txt
-4.  Download the spaCy language model:
-    ```bash
-    python -m spacy download en_core_web_sm
+   cd path/to/your/project-folder
    
 ### Usage
 1.Run the application:
