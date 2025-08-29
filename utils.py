@@ -9,17 +9,17 @@ import numpy as np
 import json
 from datetime import datetime
 
-# --------- SpaCy ----------
+# SpaCy
 nlp = spacy.load("en_core_web_sm")
 
-# --------- Embedding model for RAG ----------
+# Embedding model for RAG
 embed_model = SentenceTransformer('all-MiniLM-L6-v2')
 
-# --------- LLM for Q&A ----------
+# LLM for Q&A
 qa_model = pipeline("text2text-generation", model="google/flan-t5-base")
 
 
-# --------- Read documents ----------
+# Read documents 
 def read_pdf(file):
     pdf_reader = PyPDF2.PdfReader(file)
     text = ""
@@ -40,7 +40,7 @@ def read_txt(file):
     return file.read().decode("utf-8").strip()
 
 
-# --------- Extract entities with improved patterns ----------
+# Extract entities with improved patterns
 def extract_entities(text, doc_type):
     doc = nlp(text)
     entities = {
@@ -84,7 +84,7 @@ def extract_entities(text, doc_type):
     return entities
 
 
-# --------- Improved RAG-based Q&A ----------
+# Improved RAG-based Q&A
 def rag_answer(question, document_text, k=3):
     if not document_text:
         return "No content to answer from."
@@ -115,7 +115,7 @@ def rag_answer(question, document_text, k=3):
         return "I couldn't generate an answer. Please try a different question."
 
 
-# --------- Extract key sections from whitepapers ----------
+# Extract key sections from whitepapers
 def extract_whitepaper_sections(text):
     sections = {
         "abstract": "",
@@ -153,6 +153,7 @@ def extract_whitepaper_sections(text):
                 sections[current_section] += line + " "
 
     return sections
+
 
 
 
